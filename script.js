@@ -10,9 +10,7 @@ let playerSelection;
     function getHumanChoice(e) {
         playerSelection = (e.target.className);
         console.log(playerSelection);
-        if (!checkForWinner()) {
-            playRound(playerSelection, getComputerChoice());
-        }
+        playRound(playerSelection, getComputerChoice());
     }
 
      function getComputerChoice() {
@@ -31,14 +29,19 @@ let playerSelection;
     }
 
     function checkForWinner() {
-        if (playerScore === 5) {
-            displayResults("Game over. Human wins!");
+        if (playerScore === 5 || computerScore === 5) {
+            const winner = playerScore === 5 ? "Player" : "Computer";
+            displayResults(`Game over! ${winner} wins!`);
+
+            buttons.forEach(button => {
+                button.disabled = true;
+                button.style.opacity = "0.5";
+            });
+
             return true;
-        } else if (computerScore === 5) {
-            displayResults("Game over. Computer wins!");
-            return true;
+            }
+            return false;
         }
-    }
 
 
     function playRound(humanSays, computerSays) {
@@ -81,6 +84,10 @@ let playerSelection;
                     displayResults("You lose the round! Scissors beats paper");
                     break;
             }
+        }
+
+        if (checkForWinner()) {
+            return;
         }
 
         console.log("Player score: " + playerScore);
