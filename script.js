@@ -1,6 +1,7 @@
-let playerSelection; 
+    let playerSelection; 
     let playerScore = 0;
     let computerScore = 0;
+    const resetButton = document.querySelector('#reset');
 
     const buttons = document.querySelectorAll('.buttons button');
         buttons.forEach((button) => {
@@ -38,10 +39,26 @@ let playerSelection;
                 button.style.opacity = "0.5";
             });
 
+            
+            resetButton.style.display = "flex";
+            resetButton.addEventListener('click', newGame);
+
             return true;
             }
             return false;
         }
+    
+    function newGame() {
+        resetButton.style.display = "none";
+        buttons.forEach(button => {
+                button.disabled = false;
+                button.style.opacity = "1";
+            });
+        playerScore = 0;
+        computerScore = 0;
+        displayResults("New game!");
+
+    }
 
 
     function playRound(humanSays, computerSays) {
