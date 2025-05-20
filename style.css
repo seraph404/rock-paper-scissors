@@ -15,7 +15,7 @@ body {
     display:flex;
     width:600px;
     padding:10px;
-    height:200px;
+    height:300px;
     flex-direction:column;
     background-color:rgb(231, 231, 231);
 }
@@ -26,7 +26,7 @@ body {
     margin: 0 auto;
     max-width: 250px;
 }
-.buttons button{
+button{
     padding:15px;
     font-size:14px;
     font-weight:bold;
@@ -39,6 +39,12 @@ body {
     display:flex;
     justify-content:center;
     padding:20px;
+}
+#reset {
+    display:flex;
+    justify-content:center;
+    padding:20px;
+    display:none;
 }
 #score {
     display:flex;
