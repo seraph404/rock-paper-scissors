@@ -50,35 +50,35 @@ let playerSelection;
         } else if (humanSays === "rock") {
             switch(computerSays) {
                 case "scissors":
-                    displayResults("You win the round! Rock beats scissors.");
                     playerScore += 1;
+                    displayResults("You win the round! Rock beats scissors.");
                     break;
                 case "paper":
-                    displayResults("You lose the round! Paper beats rock")
                     computerScore += 1;
+                    displayResults("You lose the round! Paper beats rock")
                     break;
             }
         } else if (humanSays === "paper") {
             switch(computerSays) {
                 case "scissors":
-                    displayResults("You lose the round! Scissors beats paper");
                     computerScore += 1;
+                    displayResults("You lose the round! Scissors beats paper");
                     break;
                 case "rock":
-                    displayResults("You win the round! Rock beats paper");
                     playerScore += 1;
+                    displayResults("You win the round! Rock beats paper");
                     break;
             }
         } else if (humanSays === "scissors") {
             switch(computerSays) {
                 case "rock":
-                    displayResults("You lose the round! Rock beats scissors");
                     computerScore += 1;
+                    displayResults("You lose the round! Rock beats scissors");
                     
                     break;
                 case "paper":
-                    displayResults("You lose the round! Scissors beats paper");
                     computerScore += 1;
+                    displayResults("You lose the round! Scissors beats paper");
                     break;
             }
         }
