@@ -8,7 +8,7 @@ let playerSelection;
         });
 
     function getHumanChoice(e) {
-        playerSelection = (e.target.textContent).toLowerCase();
+        playerSelection = (e.target.className);
         console.log(playerSelection);
         if (!checkForWinner()) {
             playRound(playerSelection, getComputerChoice());
@@ -50,40 +50,34 @@ let playerSelection;
         } else if (humanSays === "rock") {
             switch(computerSays) {
                 case "scissors":
-                    console.log("You win! Rock beats scissors");
-                    displayResults("You score! Rock beats scissors.");
+                    displayResults("You win the round! Rock beats scissors.");
                     playerScore += 1;
                     break;
                 case "paper":
-                    console.log("You lose! Paper beats rock");
-                    displayResults("You lose! Paper beats rock")
+                    displayResults("You lose the round! Paper beats rock")
                     computerScore += 1;
                     break;
             }
         } else if (humanSays === "paper") {
             switch(computerSays) {
                 case "scissors":
-                    console.log("You lose! Scissors beats paper");
-                    displayResults("You lose! Scissors beats paper");
+                    displayResults("You lose the round! Scissors beats paper");
                     computerScore += 1;
                     break;
                 case "rock":
-                    console.log("You win! Rock beats paper");
-                    displayResults("You win! Rock beats paper");
+                    displayResults("You win the round! Rock beats paper");
                     playerScore += 1;
                     break;
             }
         } else if (humanSays === "scissors") {
             switch(computerSays) {
                 case "rock":
-                    console.log("You lose! Rock beats scissors");
-                    displayResults("You lose! Rock beats scissors");
+                    displayResults("You lose the round! Rock beats scissors");
                     computerScore += 1;
                     
                     break;
                 case "paper":
-                    console.log("You lose! Scissors beats paper");
-                    displayResults("You lose! Scissors beats paper");
+                    displayResults("You lose the round! Scissors beats paper");
                     computerScore += 1;
                     break;
             }
